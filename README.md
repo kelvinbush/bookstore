@@ -24,7 +24,6 @@ To get a local copy up and running follow these simple example steps.
 - Run `npm install` to install the React and linter dependencies.
 - Run `npm build` to build the application with react .
 - Run `npm run start` to start the development server.
-- Run `npm run test` to run the tests.
 
 
 ## Authors
