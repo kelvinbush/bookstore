@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from "./Book";
+import AddBook from "./AddBook";
 
 const Books = () => {
   const books = [{
@@ -18,6 +19,7 @@ const Books = () => {
   return (
     <div>
       {books.map(book => <Book title={book.title} author={book.author} />)}
+      <AddBook />
     </div>
   );
 };
