@@ -29,7 +29,7 @@ export default function reducer(state = initialState, action) {
     case DELETE_BOOK:
       return {
         ...state,
-        books: state.books.filter(b => b.id !== action.book.id),
+        books: state.books.filter((b) => b.id !== action.book.id),
       };
     default:
       return state;

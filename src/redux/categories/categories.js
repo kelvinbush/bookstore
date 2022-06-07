@@ -10,14 +10,10 @@ export function checkStatus() {
   };
 }
 
-
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case CHECK_STATUS:
-      return {
-        ...state,
-        categories: ['Under construction'],
-      };
+      return 'Under construction';
     default:
       return state;
   }
