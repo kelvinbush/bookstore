@@ -7,8 +7,8 @@ const Books = () => {
   const books = useSelector((state) => state.books);
   return (
     <div>
-      {books &&
-        books.books.map((book) => (
+      {books
+        && books.books.map((book) => (
           <Book
             key={book.id}
             title={book.title}
