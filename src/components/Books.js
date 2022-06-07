@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Book from './Book';
@@ -8,7 +7,10 @@ const Books = () => {
   const books = useSelector((state) => state.books);
   return (
     <div>
-      {books && books.books.map((book) => <Book key={book.id} title={book.title} author={book.author} />)}
+      {books &&
+        books.books.map((book) => (
+          <Book key={book.id} title={book.title} author={book.author} />
+        ))}
       <AddBook />
     </div>
   );
