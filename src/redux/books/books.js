@@ -5,21 +5,17 @@ const initialState = {
   books: [],
 };
 
-export function addBook(book) {
-  return {
-    type: ADD_BOOK,
-    book,
-  };
-}
+export const addBook = book => ({
+  type: ADD_BOOK,
+  book,
+});
 
-export function deleteBook(book) {
-  return {
-    type: DELETE_BOOK,
-    book,
-  };
-}
+export const deleteBook = book => ({
+  type: DELETE_BOOK,
+  book,
+});
 
-export default function reducer(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return {
