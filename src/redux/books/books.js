@@ -7,16 +7,16 @@ const initialState = {
     author: 'Don Norman',
     id: 1,
   },
-    {
-      title: 'The Most Human Human',
-      author: 'Brian Christian',
-      id: 2,
-    },
-    {
-      title: 'The Design of Everyday Things',
-      author: 'Don Norman',
-      id: 3,
-    },
+  {
+    title: 'The Most Human Human',
+    author: 'Brian Christian',
+    id: 2,
+  },
+  {
+    title: 'The Design of Everyday Things',
+    author: 'Don Norman',
+    id: 3,
+  },
   ],
 };
 
