@@ -2,7 +2,22 @@ const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
 
 const initialState = {
-  books: [],
+  books: [{
+    title: 'The Design of Everyday Things',
+    author: 'Don Norman',
+    id: 1,
+  },
+    {
+      title: 'The Most Human Human',
+      author: 'Brian Christian',
+      id: 2,
+    },
+    {
+      title: 'The Design of Everyday Things',
+      author: 'Don Norman',
+      id: 3,
+    },
+  ],
 };
 
 export const addBook = (book) => ({
