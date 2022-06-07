@@ -5,12 +5,12 @@ const initialState = {
   books: [],
 };
 
-export const addBook = book => ({
+export const addBook = (book) => ({
   type: ADD_BOOK,
   book,
 });
 
-export const deleteBook = book => ({
+export const deleteBook = (book) => ({
   type: DELETE_BOOK,
   book,
 });
@@ -30,4 +30,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
