@@ -1,24 +1,14 @@
+import axios from 'axios';
+
+const baseUrl =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/yczhKH02Nmk114disNJU/books';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
+const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';
 
 const initialState = {
-  books: [
-    {
-      title: 'The Design of Everyday Things',
-      author: 'Don Norman',
-      id: '1',
-    },
-    {
-      title: 'The Most Human Human',
-      author: 'Brian Christian',
-      id: '2',
-    },
-    {
-      title: 'The Design of Everyday Things',
-      author: 'Don Norman',
-      id: '3',
-    },
-  ],
+  books: [],
 };
 
 export const addBook = (book) => ({
@@ -31,6 +21,22 @@ export const deleteBook = (id) => ({
   id,
 });
 
+const fetchBooks = (books) => ({
+  type: FETCH_BOOKS,
+  books,
+});
+
+export const getBooks = () => (dispatch) => {
+  axios
+    .get(baseUrl)
+    .then((response) => {
+      dispatch(fetchBooks(response.data));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
@@ -42,6 +48,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         books: state.books.filter((book) => book.id !== action.id),
+      };
+    case FETCH_BOOKS:
+      return {
+        ...state,
+        books: action.books,
       };
     default:
       return state;
