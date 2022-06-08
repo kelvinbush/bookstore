@@ -5,23 +5,23 @@ import AddBook from './AddBook';
 import { getBooks } from '../redux/books/books';
 
 const Books = () => {
-  const books = useSelector((state) => state.books);
+  const { books } = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getBooks());
-    console.log(books);
-  }, []);
+  }, [dispatch]);
 
+  const keys = Object.keys(books);
   return (
     <div>
-      {books
-        && books.books.map((book) => (
+      {keys.length > 0 &&
+        keys.map((key) => (
           <Book
-            key={book.id}
-            title={book.title}
-            author={book.author}
-            id={book.id}
+            key={key}
+            title={books[key][0].title}
+            author={books[key][0].author}
+            id={key}
           />
         ))}
       <AddBook />

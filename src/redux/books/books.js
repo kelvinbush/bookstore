@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import axios from 'axios';
 
 const baseUrl =
@@ -8,7 +9,7 @@ const DELETE_BOOK = 'bookstore/books/DELETE_BOOK';
 const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';
 
 const initialState = {
-  books: [],
+  books: {},
 };
 
 export const addBook = (book) => ({
