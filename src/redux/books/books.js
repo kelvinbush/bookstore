@@ -33,12 +33,16 @@ export const deleteBookAsync = (id) => async (dispatch) => {
 };
 
 export const postBook = (book) => async (dispatch) => {
-  const { data } = await axios.post(baseUrl, book, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  dispatch(addBook(data));
+  try {
+    await axios.post(baseUrl, book, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    dispatch(addBook(book));
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export const getBooks = () => async (dispatch) => {
@@ -53,7 +57,7 @@ export default (state = initialState, action) => {
         ...state,
         books: {
           ...state.books,
-          [action.book.id]: [action.book],
+          [action.book.item_id]: [action.book],
         },
       };
     case DELETE_BOOK:
