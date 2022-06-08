@@ -1,4 +1,4 @@
-/* eslint-disable operator-linebreak */
+/* eslint-disable operator-linebreak,no-case-declarations */
 import axios from 'axios';
 
 const baseUrl =
@@ -12,12 +12,12 @@ const initialState = {
   books: {},
 };
 
-export const addBook = (book) => ({
+const addBook = (book) => ({
   type: ADD_BOOK,
   book,
 });
 
-export const deleteBook = (id) => ({
+const deleteBook = (id) => ({
   type: DELETE_BOOK,
   id,
 });
@@ -26,6 +26,20 @@ const fetchBooks = (books) => ({
   type: FETCH_BOOKS,
   books,
 });
+
+export const deleteBookAsync = (id) => async (dispatch) => {
+  await axios.delete(`${baseUrl}/${id}`);
+  dispatch(deleteBook(id));
+};
+
+export const postBook = (book) => async (dispatch) => {
+  const { data } = await axios.post(baseUrl, book, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  dispatch(addBook(data));
+};
 
 export const getBooks = () => async (dispatch) => {
   const response = await axios.get(baseUrl);
@@ -37,12 +51,16 @@ export default (state = initialState, action) => {
     case ADD_BOOK:
       return {
         ...state,
-        books: [...state.books, action.book],
+        books: {
+          ...state.books,
+          [action.book.id]: [action.book],
+        },
       };
     case DELETE_BOOK:
+      const { [action.id]: deleted, ...rest } = state.books;
       return {
         ...state,
-        books: state.books.filter((book) => book.id !== action.id),
+        books: rest,
       };
     case FETCH_BOOKS:
       return {
