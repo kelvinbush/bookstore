@@ -3,6 +3,7 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
 import { IoIosPerson } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
+import { CgClose } from "react-icons/cg";
 import Books from "./components/Books";
 import Categories from "./components/Categories";
 
@@ -39,6 +40,7 @@ const App = () => {
               onClick={() => toggleModal()}
               className="nav__person"
             />
+            <CgClose onClick={() => toggleModal()} className="close" />
           </div>
         ) : (
           <FiMenu onClick={() => toggleModal()} className="nav__menu" />
