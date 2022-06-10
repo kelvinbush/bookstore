@@ -37,7 +37,10 @@ header {
   border-bottom: 1px solid var(--color-secondary-gray);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 1;
 
   h1 {
     font-size: 1.5rem;
@@ -71,10 +74,89 @@ header {
 
 
   &__item {
+    font-family: 'Roboto Slab', serif;
     margin: 2rem 16px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+    .header {
+      color: var(--color-secondary-black);
+
+      h5 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        opacity: 0.5;
+        margin-bottom: 0.25rem;
+      }
+
+      h3 {
+        font-family: 'Roboto Slab', serif;
+        font-weight: bold;
+        font-size: 1.375rem;
+        letter-spacing: -0.2px;
+      }
+
+      p {
+        color: var(--color-secondary-blue);
+      }
+
+      div {
+        margin-top: 1.3rem;
+
+        button:not(:last-child)::after {
+          content: '';
+          border: solid 1px var(--color-tertiary-white);
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+
+        button {
+          color: var(--color-secondary-blue);
+          outline: none;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          font-weight: 300;
+        }
+
+      }
+
+
+    }
   }
 }
+
+.progress {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-secondary-black);
+
+  &__text {
+    h5 {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    p {
+      opacity: 0.5;
+    }
+
+  }
+
+
+  &__bar {
+    max-width: 4.25rem;
+    height: 4.25rem;
+  }
+}
+

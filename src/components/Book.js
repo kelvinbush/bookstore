@@ -27,6 +27,7 @@ const Book = ({ title, author, id }) => {
       </div>
       <div className="progress">
         <CircularProgressbar
+          className="progress__bar"
           value={percentageInteger}
           text=""
           styles={buildStyles({
@@ -34,7 +35,7 @@ const Book = ({ title, author, id }) => {
           })}
         />
         <div className="progress__text">
-          <p>{percentageInteger}%</p>
+          <h5>{percentageInteger}%</h5>
           <p>Completed</p>
         </div>
       </div>
