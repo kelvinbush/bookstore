@@ -92,6 +92,11 @@ header {
   top: 5rem;
   margin: 0 16px;
 
+  @media screen and (min-width: $bp-small) {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
 
   &__item {
     font-family: 'Roboto Slab', serif;
@@ -103,6 +108,11 @@ header {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+
+    @media screen and (min-width: $bp-small) {
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
 
 
     .header {
@@ -161,6 +171,7 @@ header {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-secondary-black);
 
+
   &__text {
     h5 {
       font-size: 2rem;
@@ -171,6 +182,18 @@ header {
       opacity: 0.5;
     }
 
+
+  }
+
+  &__rule {
+    display: none;
+
+    @media screen and (min-width: $bp-small) {
+      display: block;
+      width: 1px;
+      height: 80%;
+      border: solid 1px var(--color-tertiary-white);
+    }
   }
 
 

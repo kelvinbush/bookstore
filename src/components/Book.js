@@ -39,6 +39,7 @@ const Book = ({ title, author, id }) => {
           <h5>{percentageInteger}%</h5>
           <p>Completed</p>
         </div>
+        <hr className="progress__rule" />
       </div>
       <div className="chapter">
         <h6>CURRENT CHAPTER</h6>
