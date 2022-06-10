@@ -1,10 +1,12 @@
+/* stylelint-disable no-descending-specificity */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
 
 :root {
   --color-primary-blue: #0290ff;
   --color-secondary-black: #121212;
   --color-secondary-white: #fafafa;
-  --color-secondary-gray: #888888;
+  --color-secondary-gray: #888;
   --color-secondary-blue: #4386bf;
   --color-tertiary-white: #e8e8e8;
   --color-tertiary-gray: #c4c4c4;
@@ -13,13 +15,11 @@
 
 $bp-small: 37.5em; // 600px
 
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 
 body {
   background-color: var(--color-pale-gray);
@@ -43,6 +43,7 @@ header {
 
   @media screen and (min-width: $bp-small) {
     padding: 18px;
+
     .header__container {
       display: flex;
       justify-content: flex-start;
@@ -50,9 +51,7 @@ header {
       max-width: 960px;
       margin: 0 auto;
     }
-
   }
-
 
   h1 {
     font-size: 1.5rem;
@@ -84,7 +83,6 @@ header {
     text-decoration: none;
     transition: all 0.3s ease-in-out;
   }
-
 }
 
 .books {
@@ -96,7 +94,6 @@ header {
     max-width: 960px;
     margin: 0 auto;
   }
-
 
   &__item {
     font-family: 'Roboto Slab', serif;
@@ -114,7 +111,6 @@ header {
       grid-template-rows: 1fr;
       padding: 32px 16px;
     }
-
 
     .header {
       color: var(--color-secondary-black);
@@ -154,10 +150,7 @@ header {
           background-color: transparent;
           cursor: pointer;
         }
-
       }
-
-
     }
   }
 }
@@ -170,7 +163,6 @@ header {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-secondary-black);
 
-
   &__text {
     h5 {
       font-size: 2rem;
@@ -180,8 +172,6 @@ header {
     p {
       opacity: 0.5;
     }
-
-
   }
 
   &__rule {
@@ -194,7 +184,6 @@ header {
       border: solid 1px var(--color-tertiary-white);
     }
   }
-
 
   &__bar {
     max-width: 4.25rem;
@@ -221,7 +210,7 @@ header {
   }
 
   button {
-    color: #ffffff;
+    color: #fff;
     outline: none;
     background-color: var(--color-primary-blue);
     letter-spacing: 0.5px;
@@ -230,7 +219,6 @@ header {
     border-radius: 3px;
     cursor: pointer;
   }
-
 }
 
 .add-book {
@@ -271,7 +259,7 @@ header {
 
   button {
     margin: 1rem 0;
-    color: #ffffff;
+    color: #fff;
     text-transform: uppercase;
     font-size: 0.813rem;
     font-family: 'Roboto Slab', serif;
@@ -289,9 +277,7 @@ header {
       min-width: 8rem;
       margin-top: 8px;
     }
-
   }
-
 }
 
 .categories {
@@ -303,6 +289,4 @@ header {
     max-width: 960px;
     margin: 0 auto;
   }
-
 }
-

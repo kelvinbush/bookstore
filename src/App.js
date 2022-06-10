@@ -1,8 +1,7 @@
-/* eslint-disable quotes */
-import { NavLink, Route, Routes } from "react-router-dom";
-import React from "react";
-import Books from "./components/Books";
-import Categories from "./components/Categories";
+import { NavLink, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import Books from './components/Books';
+import Categories from './components/Categories';
 
 const App = () => (
   <>

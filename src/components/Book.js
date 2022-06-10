@@ -1,10 +1,9 @@
-/* eslint-disable quotes,react/jsx-one-expression-per-line */
-import React from "react";
-import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { deleteBookAsync } from "../redux/books/books";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { deleteBookAsync } from '../redux/books/books';
 
 const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
@@ -31,12 +30,15 @@ const Book = ({ title, author, id }) => {
           value={percentageInteger}
           text=""
           styles={buildStyles({
-            pathColor: `#379cf6`,
-            trailColor: "#f5f6fa",
+            pathColor: '#379cf6',
+            trailColor: '#f5f6fa',
           })}
         />
         <div className="progress__text">
-          <h5>{percentageInteger}%</h5>
+          <h5>
+            {percentageInteger}
+            %
+          </h5>
           <p>Completed</p>
         </div>
         <hr className="progress__rule" />

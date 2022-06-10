@@ -1,8 +1,7 @@
-/* eslint-disable quotes */
-const CHECK_STATUS = "categoriesStore/categories/CHECK_STATUS";
+const CHECK_STATUS = 'categoriesStore/categories/CHECK_STATUS';
 
 const initialState = {
-  categories: "",
+  categories: '',
 };
 
 export const checkStatus = () => ({
@@ -14,7 +13,7 @@ export default (state = initialState, action) => {
     case CHECK_STATUS:
       return {
         ...state,
-        categories: "Under construction",
+        categories: 'Under construction',
       };
     default:
       return state;

@@ -1,11 +1,10 @@
-/* eslint-disable quotes */
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import { postBook } from "../redux/books/books";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { postBook } from '../redux/books/books';
 
 const AddBook = () => {
-  const [form, setForm] = useState({ title: "", author: "" });
+  const [form, setForm] = useState({ title: '', author: '' });
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -17,10 +16,10 @@ const AddBook = () => {
     const book = {
       ...form,
       item_id: uuidv4(),
-      category: "",
+      category: '',
     };
     dispatch(postBook(book));
-    setForm({ title: "", author: "" });
+    setForm({ title: '', author: '' });
   };
 
   return (
