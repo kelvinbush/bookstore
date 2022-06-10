@@ -25,6 +25,7 @@ const Books = () => {
             id={key}
           />
         ))}
+      <hr />
       <AddBook />
     </section>
   );
