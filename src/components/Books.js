@@ -1,9 +1,9 @@
-/* eslint-disable operator-linebreak */
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Book from './Book';
-import AddBook from './AddBook';
-import { getBooks } from '../redux/books/books';
+/* eslint-disable operator-linebreak,quotes */
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Book from "./Book";
+import AddBook from "./AddBook";
+import { getBooks } from "../redux/books/books";
 
 const Books = () => {
   const { books } = useSelector((state) => state.books);
@@ -15,7 +15,7 @@ const Books = () => {
 
   const keys = Object.keys(books);
   return (
-    <div>
+    <section className="books">
       {keys.length > 0 &&
         keys.map((key) => (
           <Book
@@ -26,7 +26,7 @@ const Books = () => {
           />
         ))}
       <AddBook />
-    </div>
+    </section>
   );
 };
 
