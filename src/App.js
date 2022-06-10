@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import React from 'react';
+import { IoIosPerson } from 'react-icons/io';
 import Books from './components/Books';
 import Categories from './components/Categories';
 
@@ -28,6 +29,7 @@ const App = () => (
             CATEGORIES
           </NavLink>
         </nav>
+        <IoIosPerson className="account" />
       </div>
     </header>
     <Routes>
