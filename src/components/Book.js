@@ -31,7 +31,8 @@ const Book = ({ title, author, id }) => {
           value={percentageInteger}
           text=""
           styles={buildStyles({
-            pathColor: "#0290ff",
+            pathColor: `linear-gradient(to bottom, #307bbe, #379cf6);`,
+            trailColor: "#f5f6fa",
           })}
         />
         <div className="progress__text">
