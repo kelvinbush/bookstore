@@ -1,4 +1,3 @@
-/* eslint-disable operator-linebreak */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
@@ -15,9 +14,9 @@ const Books = () => {
 
   const keys = Object.keys(books);
   return (
-    <div>
-      {keys.length > 0 &&
-        keys.map((key) => (
+    <section className="books">
+      {keys.length > 0
+        && keys.map((key) => (
           <Book
             key={key}
             title={books[key][0].title}
@@ -25,8 +24,9 @@ const Books = () => {
             id={key}
           />
         ))}
+      <hr />
       <AddBook />
-    </div>
+    </section>
   );
 };
 

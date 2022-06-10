@@ -4,16 +4,16 @@
 
 > A React app that lists books and allows the user to add new books.
 
-
 ## Built With
 
 - [React](https://reactjs.org/)
+- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Sass](https://sass-lang.com/)
 
 ## Live Demo (coming soon)
 
-
-
 ## Getting Started
+
 To get a local copy up and running follow these simple example steps.
 
 - Copy this link `https://github.com/kelvinbush/bookstore`.
@@ -24,7 +24,6 @@ To get a local copy up and running follow these simple example steps.
 - Run `npm install` to install the React and linter dependencies.
 - Run `npm build` to build the application with react .
 - Run `npm run start` to start the development server.
-
 
 ## Authors
 
