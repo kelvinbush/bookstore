@@ -10,10 +10,22 @@ const App = () => (
       <div className="header__container">
         <h1>Bookstore CMS</h1>
         <nav className="nav">
-          <NavLink className="nav__link" to="/">
+          <NavLink
+            style={({ isActive }) => ({
+              opacity: isActive ? 1 : 0.5,
+            })}
+            className="nav__link"
+            to="/"
+          >
             BOOKS
           </NavLink>
-          <NavLink className="nav__link" to="/categories">
+          <NavLink
+            style={({ isActive }) => ({
+              opacity: isActive ? 1 : 0.5,
+            })}
+            className="nav__link"
+            to="/categories"
+          >
             CATEGORIES
           </NavLink>
         </nav>

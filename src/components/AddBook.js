@@ -35,9 +35,9 @@ const AddBook = () => {
           onChange={(e) => handleChange(e)}
         />
         <input
-          name="Book author"
+          name="author"
           type="text"
-          placeholder="Author"
+          placeholder="Book Author"
           value={form.author}
           onChange={(e) => handleChange(e)}
         />
